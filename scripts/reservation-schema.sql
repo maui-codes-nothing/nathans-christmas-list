@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS gift_reservations (
+  id TEXT PRIMARY KEY NOT NULL,
+  owner TEXT NOT NULL
+);
