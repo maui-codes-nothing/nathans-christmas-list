@@ -1,5 +1,6 @@
 import { familyGifts, familyMemory, parentsGifts, parentsPasscode, personalPages, stockingStuffers } from "./wishlist-data.js";
 import { createPrivilegeCards } from "./privilege-cards.js";
+import { attachReservations } from "./reservations.js";
 
 const giftLists = {
   family: { label: "01 / Under the tree", heading: "Family List", gifts: familyGifts },
@@ -83,6 +84,14 @@ function giftCard(gift) {
     link.setAttribute("aria-label", `${link.textContent} for ${gift.name} (opens in a new tab)`);
     copy.append(link);
   }
+  // GitHub Pages remains a static fallback; Cloudflare has shared reservations.
+  if (gift.id && !location.hostname.endsWith(".github.io")) {
+    const reserve = element("button", "reserve-button", "Reserve anonymously");
+    reserve.type = "button";
+    reserve.dataset.reserve = gift.id;
+    reserve.disabled = true;
+    copy.append(reserve);
+  }
   if (gift.image) card.append(image(gift.image, gift.imageAlt ?? (gift.placeholder ? "Product photo placeholder" : gift.name)));
   card.append(copy);
   return card;
@@ -120,7 +129,14 @@ export function createPanels(dialog, onClose) {
       memory.append(element("h3", "", familyMemory.heading), element("p", "", familyMemory.message));
       nodes.push(memory);
     }
-    show([...nodes, grid]);
+    if (location.hostname.endsWith(".github.io")) {
+      show([...nodes, grid]);
+    } else {
+      const status = element("p", "reservation-status");
+      status.setAttribute("role", "status");
+      show([...nodes, status, grid]);
+      attachReservations(grid, status);
+    }
   }
 
   function permissionCards() {
