@@ -1,0 +1,23 @@
+# Nathan’s List — GitHub Pages edition
+
+This is an editable, static website. It includes the animated Three.js cabin, three gift lists, parent and relative passcodes, personal letters, and printable privilege cards. The shared gift-reservation feature from the original project is *not* included because GitHub Pages cannot run its database/API. One restricted item is omitted from this published copy. All remaining gift links, images, and lists are preserved.
+
+## Publish on GitHub Pages without installing anything
+
+1. Extract `nathans-christmas-github-ready.zip` on your computer. Inside it, find `index.html`, `styles.css`, `js`, `assets`, `vendor`, and `.nojekyll`.
+2. Sign into github.com and create a **new public repository** called `nathans-christmas-list` (you can choose another name). Check **Add a README file** while creating it, so the repository has an initial commit. Public repositories are required for GitHub Pages on GitHub Free.
+3. Open the new repository. Select **Add file → Upload files**. Drag ALL the CONTENTS from the extracted publishing folder onto the upload page, including the three folders (`js`, `assets`, `vendor`) and the root files. Do not upload just the ZIP and do not place everything in an extra nested folder.
+4. Choose **Commit changes**.
+5. In your repository choose **Settings → Pages**. Under **Build and deployment** select **Deploy from a branch**, then choose **main** and `/(root)`, and save.
+6. GitHub Pages will publish at `https://YOUR-USERNAME.github.io/nathans-christmas-list/` (substitute your account and actual repository name). The deployed URL is displayed in Settings → Pages.
+7. Test the public gift list, a parents' passcode, one relative passcode, and product links on a phone.
+
+If hidden `.nojekyll` doesn't upload, create an empty `.nojekyll` file in the repository's root through GitHub (Add file → Create new file). Avoid uploading private materials. GitHub Pages content and repository source are public, and passcodes are only client-side gates.
+
+## Editing later
+
+The editable source of this hosted edition is in this project's `site/` directory, especially `site/js/wishlist-data.js` for gifts and passcodes. To build the files for GitHub Pages, install Node.js 22.13+ and run `npm run build` in this folder; upload the contents of `dist/` to the repository root. You can also edit `js/wishlist-data.js` directly in your GitHub repository through the web interface for quick content changes (the published file paths are identical to the `site/` folder). Keep the original `HANDOFF.md` for understanding the architecture.
+
+## Test locally
+
+Open Command Prompt from the root project directory and run `npm run dev`; visit `http://127.0.0.1:5173`. No external dependencies are needed. `npm run build` builds `dist/`.

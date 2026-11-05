@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151a17">
+  <title>Nathan’s List — Christmas 2026</title>
+  <link rel="icon" href="./assets/parcel.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="importmap">
+    {"imports":{"three":"./vendor/three.module.min.js"}}
+  </script>
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <span class="postmark"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1v18M2.2 5.5l15.6 9M2.2 14.5l15.6-9M7.5 3.5 10 6l2.5-2.5m-5 13L10 14l2.5 2.5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg> The Winter Post</span>
+      <span class="mast-edition">December <i></i> 2026</span>
+    </header>
+    <h1 class="sr-only">Nathan’s List — Christmas 2026</h1>
+    <section class="cabinet" aria-label="Interactive Christmas cabin">
+      <div class="scene-frame">
+        <div id="scene" class="scene" aria-hidden="true"></div>
+        <p id="scene-status" class="scene-status" role="status">Lighting the fireplace…</p>
+        <div class="fallback-title" aria-hidden="true"><b>Nathan’s List</b><span>Christmas 2026</span></div>
+        <span class="scene-index" aria-hidden="true">01 / THE CABIN</span>
+      </div>
+      <nav class="cabin-nav" aria-label="Cabin objects">
+        <button type="button" class="tag" data-door="family"><span class="tag-number" aria-hidden="true">01</span><span><strong>Family List</strong><small>Under the tree</small></span></button>
+        <button type="button" class="tag" data-door="parents"><span class="tag-number" aria-hidden="true">02</span><span><strong>Parents</strong><small>In the stocking</small></span></button>
+        <button type="button" class="tag" data-door="personal"><span class="tag-number" aria-hidden="true">03</span><span><strong>For You</strong><small>On the writing desk</small></span></button>
+        <button type="button" class="tag" data-door="stuffers"><span class="tag-number" aria-hidden="true">04</span><span><strong>Stocking Stuffers</strong><small>In the green stocking</small></span></button>
+        <button type="button" class="tag" data-door="privileges"><span class="tag-number" aria-hidden="true">05</span><span><strong>Privileges</strong><small>Cards on the mantel</small></span></button>
+      </nav>
+    </section>
+    <footer class="cabin-caption">
+      <p>Pick up a present, a stocking, a letter, or a card.</p>
+      <span>Made for family <i></i> 2026</span>
+    </footer>
+    <noscript><p class="no-script">Enable JavaScript to open the lists and letters.</p></noscript>
+  </main>
+
+  <dialog id="room-panel" aria-labelledby="panel-title">
+    <div class="panel-bar"><button id="home" type="button">← Back to cabin</button><span>The Winter Post / 2026</span></div>
+    <section id="panel-content" class="panel-content"></section>
+  </dialog>
+  <section id="privilege-print" class="privilege-print" aria-hidden="true"></section>
+  <template id="privilege-card-template">
+    <article class="privilege-card">
+      <p class="eyebrow">The Winter Post / Permission card</p>
+      <p class="privilege-recipient">Permission for Nathan</p>
+      <h3 class="privilege-name"></h3>
+      <div class="privilege-blank">Notes or conditions</div>
+      <div class="privilege-signatures">
+        <div class="privilege-blank">Parent signature</div>
+        <div class="privilege-blank">Date</div>
+      </div>
+    </article>
+  </template>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 310">
+  <rect width="540" height="310" fill="#e8e0ca"/>
+  <rect x="19" y="19" width="502" height="272" fill="none" stroke="#b6aa8a" stroke-dasharray="4 6"/>
+  <g fill="none" stroke="#43554a" stroke-width="3" stroke-linejoin="round">
+    <path d="M222 111h96v71h-96zM216 95h108v18H216zM267 95h6v87h-6z"/>
+    <path d="M270 94c-45 1-35-39-13-22 7 5 11 13 13 22Zm0 0c45 1 35-39 13-22-7 5-11 13-13 22Z"/>
+  </g>
+  <text x="270" y="230" fill="#43554a" text-anchor="middle" font-family="monospace" font-size="15" letter-spacing="4">PRODUCT PHOTO</text>
+</svg>
